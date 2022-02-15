@@ -44,7 +44,7 @@ router.get('/animes/:id', async (req, res) => {
 //update anime
 router.patch('/animes/:id', async (req, res) => {
     const updates = Object.keys(req.body);
-    const allowedUpdates = ["name", "description", "author"];
+    const allowedUpdates = ["name", "description", "author","finalized","actualChapter","imagePath"];
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
 
     if(!isValidOperation) {
